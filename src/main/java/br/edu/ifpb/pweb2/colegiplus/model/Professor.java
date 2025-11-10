@@ -5,8 +5,10 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
 import jakarta.validation.constraints.NotBlank;
+import java.util.List;
 
 @Entity
 @Table(name = "professor")
@@ -29,6 +31,10 @@ public class Professor {
     private String senha;
 
     private boolean coordenador;
+
+    @OneToMany(mappedBy = "professor")
+    private List<Processo> processos;
+
 
     public Long getId() {
         return id;

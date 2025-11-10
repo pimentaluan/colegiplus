@@ -5,8 +5,10 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
 import jakarta.validation.constraints.NotBlank;
+import java.util.List;
 
 @Entity
 @Table(name = "aluno")
@@ -26,6 +28,10 @@ public class Aluno {
 
     @NotBlank
     private String senha;
+
+    @OneToMany(mappedBy = "aluno")
+    private List<Processo> processos;
+
 
     // Gets e Sets
     public Long getId() {
