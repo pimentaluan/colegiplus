@@ -50,6 +50,9 @@ public class Processo implements Serializable {
     @Enumerated(EnumType.STRING)
     private TipoDecisao decisaoRelator;
 
+    @Enumerated(EnumType.STRING)
+    private StatusProcesso status;
+
     @ManyToOne
     @JoinColumn(name = "assunto_id")
     private Assunto assunto;
