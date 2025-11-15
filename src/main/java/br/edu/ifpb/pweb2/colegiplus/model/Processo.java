@@ -34,17 +34,17 @@ public class Processo implements Serializable {
     @Column(unique = true, nullable = false)
     @NotBlank
     private String numero;
-     
-    @Temporal(TemporalType.DATE)
-    private Date dataRecepcao; 
 
     @Temporal(TemporalType.DATE)
-    private Date dataDistribuicao; 
+    private Date dataRecepcao;
 
     @Temporal(TemporalType.DATE)
-    private Date dataParecer; 
+    private Date dataDistribuicao;
 
-    @Lob 
+    @Temporal(TemporalType.DATE)
+    private Date dataParecer;
+
+    @Lob
     private byte[] parecer;
 
     @Enumerated(EnumType.STRING)
@@ -65,6 +65,7 @@ public class Processo implements Serializable {
     @JoinColumn(name = "professor_relator_id")
     private Professor relator;
 
-} 
+    @Column(length = 1000)
+    private String textoRequerimento;
 
-   
+}
