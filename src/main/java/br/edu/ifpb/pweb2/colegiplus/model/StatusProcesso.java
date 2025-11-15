@@ -8,7 +8,7 @@ public enum StatusProcesso {
     CRIADO(1), 
     DISTRIBUIDO(2),
     EM_PAUTA(3),
-    EM_JULGAMENTO(4),
+    DISPONIVEL(4),
     JULGADO(5); 
 
     private final int codigo; 
