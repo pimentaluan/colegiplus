@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Colegi+ - Cadastro de Processo</title>
+</head>
+<body>
+    <h1>Cadastro de Processo</h1>
+    <form th:action="@{/processos/save}" method="post" th:object="${processo}">
+        <input type="hidden" th:field="*{id}" required/>
+
+        <label for="assunto">Assunto:</label>
+        <select th:field="*{assunto}">
+            <option value="">Selecione um Assunto</option> 
+            <option th:each="a : ${assuntos}" 
+                    th:value="${a.id}" 
+                    th:text="${a.nome}">Nome do Assunto</option>
+        </select>
+        <br><br>
+
+        <label for="Texto">Texto com requerimento:</label>
+        <input type="text" id="textoRequerimento" th:field="*{textoRequerimento}"><br><br>
+
+        <hr>
+
+        <button type="submit">Cadastrar Processo</button>
+        <a th:href="@{/processos/list}">Cancelar</a>
+    
+</body>
+</html>
