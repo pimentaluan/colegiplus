@@ -23,17 +23,15 @@ spring.datasource.password=sua_senha_postgres
 O sistema exige registros nas tabelas **`Aluno`** e **`Assunto`**. Você deve executar este script SQL no seu cliente de banco de dados **após** a aplicação ter rodado pela primeira vez (para garantir que as tabelas foram criadas).
 
 ```sql
--- DADOS DE TESTE PARA O PROJETO COLLEGIPLUS
+--- DADOS DE TESTE PARA O PROJETO COLLEGIPLUS
 -- -----------------------------------------
 
 -- 1. Inserir um ALUNO (CRUCIAL para o ProcessoService)
-INSERT INTO aluno (id, nome, matricula, email, curso)
-VALUES (1, 'Aluno Teste', '20201012345', 'aluno.teste@ifpb.edu.br', 'ADS')
+INSERT INTO aluno (id, login, matricula, nome, senha, telefone) VALUES (2, 'aluno.teste@ifpb.edu.br', 123, 'Aluno Teste', '123', 12345678);
 
 -- 2. Inserir Assuntos (Necessário para o formulário)
 INSERT INTO assunto (id, nome)
 VALUES 
-    (1, 'Reabertura de Matrícula'),
     (2, 'Aproveitamento de Componente Curricular'),
     (3, 'Trancamento de Disciplina'),
     (4, 'Revisão de Média');
